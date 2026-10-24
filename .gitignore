@@ -1,0 +1,11 @@
+# Archivos compilados de Java
+*.class
+
+# Archivos generados por NetBeans y Ant
+/build/
+/dist/
+
+# Archivos temporales de Windows
+Thumbs.db
+
+/nbproject/private/

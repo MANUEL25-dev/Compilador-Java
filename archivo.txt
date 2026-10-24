@@ -1,0 +1,168 @@
+INICIO:
+INI_DECL:
+A : ENT;
+B : ENT;
+C : ENT;
+MAYOR : ENT;
+MEDIO : ENT;
+MENOR : ENT;
+OPCION : ENT;
+VALIDO : ENT;
+RES : ENT;
+I : ENT;
+FIN_DECL:
+
+VALIDO = 0;
+MIENTRAS ( VALIDO == 0 ) HACER
+    MOSTRAR("INGRESE A:");
+    CAPTURAR(A);
+    MOSTRAR("INGRESE B:");
+    CAPTURAR(B);
+    MOSTRAR("INGRESE C:");
+    CAPTURAR(C);
+
+    VALIDO = 1;
+
+    SI ( A < 1 ) ENTONCES
+        VALIDO = 0;
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( A > 255 ) ENTONCES
+        VALIDO = 0;
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( B < 1 ) ENTONCES
+        VALIDO = 0;
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( B > 255 ) ENTONCES
+        VALIDO = 0;
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( C < 1 ) ENTONCES
+        VALIDO = 0;
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( C > 255 ) ENTONCES
+        VALIDO = 0;
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( VALIDO == 1 ) ENTONCES
+        VALIDO = 0;
+        SI ( A < B ) ENTONCES
+            SI ( B < C ) ENTONCES
+                MAYOR = C;
+                MEDIO = B;
+                MENOR = A;
+                VALIDO = 1;
+            FIN_SI:
+            SINO
+            SINO_FIN:
+        FIN_SI:
+        SINO
+        SINO_FIN:
+
+        SI ( A > B ) ENTONCES
+            SI ( B > C ) ENTONCES
+                MAYOR = A;
+                MEDIO = B;
+                MENOR = C;
+                VALIDO = 1;
+            FIN_SI:
+            SINO
+            SINO_FIN:
+        FIN_SI:
+        SINO
+        SINO_FIN:
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( VALIDO == 0 ) ENTONCES
+        MOSTRAR("ERROR: DEBEN SER DISTINTOS, ORDENADOS Y DE 1 A 255");
+    FIN_SI:
+    SINO
+    SINO_FIN:
+FIN_MIENTRAS:
+
+OPCION = 0;
+MIENTRAS ( OPCION <> 7 ) HACER
+    MOSTRAR("MENU:");
+    MOSTRAR("1. SUMA");
+    MOSTRAR("2. RESTA");
+    MOSTRAR("3. MULTIPLICACION");
+    MOSTRAR("4. DIVISION");
+    MOSTRAR("5. MODULO O RESIDUO");
+    MOSTRAR("6. EXPONENCIACION");
+    MOSTRAR("7. SALIR");
+    MOSTRAR("ELIGE UNA OPCION:");
+    CAPTURAR(OPCION);
+
+    SI ( OPCION == 1 ) ENTONCES
+        RES = MAYOR + MEDIO;
+        MOSTRAR("SUMA (MAYOR + MEDIO):");
+        MOSTRAR(RES);
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( OPCION == 2 ) ENTONCES
+        RES = MAYOR - MENOR;
+        MOSTRAR("RESTA (MAYOR - MENOR):");
+        MOSTRAR(RES);
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( OPCION == 3 ) ENTONCES
+        RES = MAYOR * MEDIO;
+        MOSTRAR("MULTIPLICACION (MAYOR * MEDIO):");
+        MOSTRAR(RES);
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( OPCION == 4 ) ENTONCES
+        RES = MAYOR / MENOR;
+        MOSTRAR("DIVISION (MAYOR / MENOR):");
+        MOSTRAR(RES);
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( OPCION == 5 ) ENTONCES
+        RES = MAYOR % MEDIO;
+        MOSTRAR("MODULO (MAYOR % MEDIO):");
+        MOSTRAR(RES);
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+    SI ( OPCION == 6 ) ENTONCES
+        RES = 1;
+        I = 1;
+        MIENTRAS ( I <= MEDIO ) HACER
+            RES = RES * MENOR;
+            I = I + 1;
+        FIN_MIENTRAS:
+        MOSTRAR("EXPONENCIACION (MENOR ^ MEDIO):");
+        MOSTRAR(RES);
+    FIN_SI:
+    SINO
+    SINO_FIN:
+
+FIN_MIENTRAS:
+
+FIN:
